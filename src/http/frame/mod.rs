@@ -439,7 +439,7 @@ mod tests {
             let header = (data.len() as u32, 0x1, 0, 1);
             let buf = {
                 let mut buf = Vec::new();
-                buf.extend(pack_header(&header).to_vec().into_iter());
+                buf.extend(pack_header(&header).iter().cloned());
                 buf.extend(data.to_vec().into_iter());
                 buf
             };
@@ -457,7 +457,7 @@ mod tests {
             let header = (data.len() as u32, 0x1, 0, 1);
             let buf = {
                 let mut buf = Vec::new();
-                buf.extend(pack_header(&header).to_vec().into_iter());
+                buf.extend(pack_header(&header).iter().cloned());
                 buf.extend(data.to_vec().into_iter());
                 buf.extend(b"12345".to_vec().into_iter());
                 buf
@@ -476,7 +476,7 @@ mod tests {
             let header = (data.len() as u32, 0x1, 0, 1);
             let buf = {
                 let mut buf = Vec::new();
-                buf.extend(pack_header(&header).to_vec().into_iter());
+                buf.extend(pack_header(&header).iter().cloned());
                 buf.extend(data[..2].to_vec().into_iter());
                 buf
             };
@@ -493,7 +493,7 @@ mod tests {
             let header = (0, 0x1, 0, 1);
             let buf = {
                 let mut buf = Vec::new();
-                buf.extend(pack_header(&header)[..5].to_vec().into_iter());
+                buf.extend(pack_header(&header)[..iter()cloned().into_iter());
                 buf
             };
             let buf_clone = buf.clone();
@@ -525,7 +525,7 @@ mod tests {
         let header = (data.len() as u32, 0x1, 0, 1);
         let buf = {
             let mut buf = Vec::new();
-            buf.extend(pack_header(&header).to_vec().into_iter());
+            buf.extend(pack_header(&header).iter().cloned());
             buf.extend(data.to_vec().into_iter());
             buf
         };
@@ -541,7 +541,7 @@ mod tests {
         let header = (data.len() as u32, 0x1, 0, 1);
         let buf = {
             let mut buf = Vec::new();
-            buf.extend(pack_header(&header).to_vec().into_iter());
+            buf.extend(pack_header(&header).iter().cloned());
             buf.extend(data.to_vec().into_iter());
             buf
         };
@@ -563,7 +563,7 @@ mod tests {
         let header = (data.len() as u32, 0x1, 0, 1);
         let buf = {
             let mut buf = Vec::new();
-            buf.extend(pack_header(&header).to_vec().into_iter());
+            buf.extend(pack_header(&header).iter().cloned());
             buf.extend(data.to_vec().into_iter());
             buf
         };
