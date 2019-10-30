@@ -493,7 +493,7 @@ mod tests {
             let header = (0, 0x1, 0, 1);
             let buf = {
                 let mut buf = Vec::new();
-                buf.extend(pack_header(&header)[..iter()cloned().into_iter());
+                buf.extend(pack_header(&header)[..5].iter());
                 buf
             };
             let buf_clone = buf.clone();
